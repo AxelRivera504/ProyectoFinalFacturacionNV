@@ -7,5 +7,6 @@
         public decimal Precio { get; set; }
         public decimal Stock { get; set; }
         public string UnidadMedida { get; set; } = string.Empty;
+        public ICollection<FacturaDetalle> FacturaDetalles { get; set; } = new List<FacturaDetalle>();
     }
 }

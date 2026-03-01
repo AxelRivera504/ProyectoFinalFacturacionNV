@@ -1,4 +1,4 @@
-﻿namespace Facturacion.Domain.Entities.Acceso
+﻿namespace Facturacion.Domain.Entities.Autorizacion
 {
     public class RolPantalla : EntidadBase
     {

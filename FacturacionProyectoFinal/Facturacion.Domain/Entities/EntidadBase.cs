@@ -1,4 +1,4 @@
-﻿using Facturacion.Domain.Entities.Acceso;
+﻿using Facturacion.Domain.Entities.Autorizacion;
 
 namespace Facturacion.Domain.Entities
 {

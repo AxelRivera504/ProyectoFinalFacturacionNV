@@ -8,5 +8,7 @@
         public decimal Subtotal { get; set; }
         public decimal Impuesto { get; set; }
         public decimal Total { get; set; }
+
+        public ICollection<FacturaDetalle> FacturaDetalles { get; set; } = new List<FacturaDetalle>();
     }
 }
