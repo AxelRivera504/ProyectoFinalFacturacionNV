@@ -1,0 +1,43 @@
+﻿using Facturacion.Domain.Entities.Autorizacion;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Migrations;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Facturacion.Infrastructure.Configs.Autorizacion
+{
+    internal class RolConfig : IEntityTypeConfiguration<Rol>
+    {
+        private const string Table = "Roles";
+        private const string Schema = "Aut";
+
+        public void Configure(EntityTypeBuilder<Rol> builder)
+        {
+            builder.ToTable(Table, Schema, table =>
+            {
+                table.HasCheckConstraint(
+                    "CK_Roles_Nombre",
+                    "LEN([Nombre]) >= 2"
+                );
+
+            });
+
+            
+            EntidadBaseConfiguration.Apply(builder, Table);
+
+            builder.Property(r => r.Nombre)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            builder.HasIndex(r => r.Nombre)
+                .IsUnique()
+                .HasDatabaseName("UQ_Roles_Nombre");
+
+        }
+
+    }
+}

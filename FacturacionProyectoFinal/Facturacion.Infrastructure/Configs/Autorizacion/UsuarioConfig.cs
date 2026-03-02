@@ -1,6 +1,7 @@
 ﻿using Facturacion.Domain.Entities.Autorizacion;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,11 @@ namespace Facturacion.Infrastructure.Configs.Autorizacion
 {
     public class UsuarioConfig : IEntityTypeConfiguration<Usuario>
     {
-        private string Tabla = "Usuarios"; 
+        private string Table = "Usuarios"; 
         private string Schema = "Aut"; 
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.ToTable(Tabla, Schema, table =>
+            builder.ToTable(Table, Schema, table =>
             {
                 table.HasCheckConstraint(
                     "CK_Usuarios_Nombre",
@@ -32,6 +33,7 @@ namespace Facturacion.Infrastructure.Configs.Autorizacion
                     "[Email] LIKE '%@%.%'"
                 );
             });
+            EntidadBaseConfiguration.Apply(builder, Table);
 
             builder.Property(u => u.Id).ValueGeneratedOnAdd();
 
