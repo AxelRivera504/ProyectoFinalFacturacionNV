@@ -1,11 +1,12 @@
+using Facturacion.Application.Helpers;
 using Facturacion.Infrastructure.Context;
+using Facturacion.Infrastructure.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<FacturacionContext>(options =>
-    options.UseSqlServer(builder.Configuration["LocalConnectionString"]));
+builder.Services.AddInfrastructure(builder.Configuration).AddAplication();
 
 //add-migration MigracionInicial -Project Facturacion.Infrastructure -StartupProject Facturacion.WebApi
 //remove-migration -Project Facturacion.Infrastructure -StartupProject Facturacion.WebApi
@@ -32,3 +33,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+//DTOS Data Transfer Object

@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Facturacion.Application\Facturacion.Application.csproj" />
     <ProjectReference Include="..\Facturacion.Infrastructure\Facturacion.Infrastructure.csproj" />
   </ItemGroup>
 

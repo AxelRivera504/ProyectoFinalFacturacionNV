@@ -1,4 +1,5 @@
-﻿namespace Facturacion.Domain.Entities.Facturacion
+﻿
+namespace Facturacion.Domain.Entities.Facturacion
 {
     public class Producto : EntidadBase
     {
