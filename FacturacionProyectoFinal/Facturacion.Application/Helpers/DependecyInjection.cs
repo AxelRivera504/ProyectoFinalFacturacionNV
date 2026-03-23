@@ -1,13 +1,8 @@
-﻿using Facturacion.Application.Intefaces.Productos;
-using Facturacion.Application.Interfaces.Productos;
+﻿using Facturacion.Application.Interfaces.Productos;
 using Facturacion.Application.Services.Productos;
-using Microsoft.Extensions.Configuration;
+using Facturacion.Application.Validations.Productos;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Facturacion.Application.Helpers
 {
@@ -18,6 +13,7 @@ namespace Facturacion.Application.Helpers
 
             //Agregando Repositories
             services.AddScoped<IProductoService, ProductoService>();
+            services.AddValidatorsFromAssemblyContaining<ProductoRequestValidator>();
             return services;
         }
     }

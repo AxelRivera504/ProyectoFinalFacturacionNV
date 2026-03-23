@@ -1,11 +1,6 @@
 ﻿using Facturacion.Domain.Entities.Autorizacion;
 using Facturacion.Domain.Entities.Facturacion;
-using Microsoft.EntityFrameworkCore;    
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Facturacion.Infrastructure.Context
 {

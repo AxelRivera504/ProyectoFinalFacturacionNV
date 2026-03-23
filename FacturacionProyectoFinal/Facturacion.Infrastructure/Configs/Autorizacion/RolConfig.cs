@@ -1,12 +1,6 @@
 ﻿using Facturacion.Domain.Entities.Autorizacion;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Facturacion.Infrastructure.Configs.Autorizacion
 {
@@ -26,7 +20,7 @@ namespace Facturacion.Infrastructure.Configs.Autorizacion
 
             });
 
-            
+
             EntidadBaseConfiguration.Apply(builder, Table);
 
             builder.Property(r => r.Nombre)

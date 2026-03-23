@@ -1,7 +1,5 @@
 using Facturacion.Application.Helpers;
-using Facturacion.Infrastructure.Context;
 using Facturacion.Infrastructure.Helpers;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 

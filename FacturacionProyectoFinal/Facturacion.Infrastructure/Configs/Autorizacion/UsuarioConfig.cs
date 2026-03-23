@@ -1,19 +1,13 @@
 ﻿using Facturacion.Domain.Entities.Autorizacion;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Facturacion.Infrastructure.Configs.Autorizacion
 {
     public class UsuarioConfig : IEntityTypeConfiguration<Usuario>
     {
-        private string Table = "Usuarios"; 
-        private string Schema = "Aut"; 
+        private string Table = "Usuarios";
+        private string Schema = "Aut";
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
             builder.ToTable(Table, Schema, table =>

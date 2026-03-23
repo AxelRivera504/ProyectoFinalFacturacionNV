@@ -1,9 +1,4 @@
 ﻿using Facturacion.Application.DTOs.Productos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Facturacion.Application.Interfaces.Productos
 {
@@ -11,7 +6,7 @@ namespace Facturacion.Application.Interfaces.Productos
     {
         Task<IEnumerable<ProductoResponseDto>> ObtenerProductosAsync();
         Task<ProductoResponseDto?> ObtenerProductoPorIdAsync(int id);
-        Task<ProductoResponseDto> AgregarAsync(CrearProductoRequestDto dto);
-        Task<ProductoResponseDto?> ActualizarAsync(int id, EditarProductoRequestDto dto);
+        Task<bool> AgregarAsync(CrearProductoRequestDto dto);
+        Task<bool> ActualizarAsync(int id, EditarProductoRequestDto dto);
     }
 }
